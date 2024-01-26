@@ -1,0 +1,209 @@
+/* -----------------
+Tabla de contenidos:
+--------------------
+1. Fuente ................ 20
+2. Variables ............. 25
+3. Estilos generales ..... 49
+4. Estilos container ..... 98
+5. Estilos recipe ........ 104
+6. Estilos header ........ 112
+7. Estilos copy .......... 118
+8. Estilos preparation ... 123
+9. Estilos instruction ... 139
+10. Estilos nutrition .... 150
+11. Media query .......... 174
+--------------------
+*/
+
+
+/* ----- Fuente ----- */
+@import url('https://fonts.googleapis.com/css2?family=Young+Serif&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&display=swap');
+
+
+/* ----- Variables ----- */
+:root {
+    /* colores primarios */
+    --nutmeg: hsl(14, 45%, 36%);
+    --dark-raspberry: hsl(332, 51%, 32%);
+
+    /* colores neutrales */
+    --white: hsl(0, 0%, 100%);
+    --rose-white: hsl(330, 100%, 98%);
+    --eggshell: hsl(30, 54%, 90%);
+    --light-grey: hsl(30, 18%, 87%);
+    --wenge-brown: hsl(30, 10%, 34%);
+    --dark-charcoal: hsl(24, 5%, 18%);
+
+    /* config. generales */
+    --fuente-young: 'Young Serif', serif;
+    --fuente-outfit: 'Outfit', sans-serif;
+    --ftsize: 1rem;
+    --lheight: 22px;
+}
+
+
+/* ----------------------------- */
+/* ----- Estilos generales ----- */
+/* ----------------------------- */
+body {
+    font-size: var(--ftsize);
+    color: var(--wenge-brown);
+    line-height: var(--lheight);
+    font-family: var(--fuente-outfit);
+    background-color: var(--eggshell);
+    font-weight: 400;
+}
+
+hr {
+    border: 1px solid var(--light-grey);
+}
+
+ul li {
+    list-style-type: square;
+}
+
+ol li,
+ul li {
+    color: var(--nutmeg);
+    margin: 10px 0;
+    padding-left: 15px;
+}
+
+ol li span,
+ul li span {
+    color: var(--wenge-brown);
+}
+
+h1, 
+h2 {
+    font-family: var(--fuente-young);
+    color: var(--nutmeg);
+}
+
+.container,
+.recipe {
+    padding: 40px;
+}
+
+.recipe__copy,
+.recipe__preparation,
+.recipe__ingredients,
+.recipe__instructions,
+.recipe__nutrition {
+    padding: 20px 0;
+}
+
+/* ----- Estilos container ----- */
+.container {
+    display: flex;
+    justify-content: center;
+}
+
+/* ----- Estilos recipe ----- */
+.recipe {
+    width: 800px;
+    max-width: 900px;
+    border-radius: 25px;
+    background-color: var(--white);
+}
+
+/* ----- Estilos seccion header ----- */
+.header--image {
+    width: 100%;
+    border-radius: 15px;
+}
+
+/* ----- Estilos seccion copy ----- */
+h1 {
+    color: var(--dark-charcoal);
+}
+
+/* ----- Estilos seccion preparation ----- */
+.recipe__preparation {
+    padding: 20px;
+    border-radius: 15px;
+    background-color: var(--rose-white);
+}
+
+h3 {
+    color: var(--dark-raspberry);
+}
+
+.recipe__preparation ul li {
+    
+    color: var(--dark-raspberry);
+}
+
+/* ----- Estilos seccion instructions ----- */
+ol li {
+    color: var(--nutmeg);
+    font-weight: 600;
+}
+
+ol li span {
+    color: var(--wenge-brown);
+    font-weight: 400;
+}
+
+/* ----- Estilos seccion nutrition ----- */
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+tr {
+	border-bottom: 1px solid var(--light-grey);
+}
+
+tr:last-of-type {
+	border-bottom: none;
+}
+
+td {
+    padding: 10px;
+}
+
+td:nth-child(2) {
+	color: var(--nutmeg);
+	font-weight: 700;
+}
+
+
+/* ----- Media Query ----- */
+@media screen and (min-width: 375px) and (max-width: 767px) {
+    
+    hr {
+        width: 90%;
+    }
+
+    .container {
+        padding: 0;
+    }
+
+    .recipe {
+        width: 100%;
+        border-radius: 0;
+        padding: 0;
+    }
+
+    .header--image {
+        border-radius: 0;
+    }
+
+    h1 {
+        line-height: 40px;
+    }
+
+    .recipe__copy,
+    .recipe__preparation,
+    .recipe__ingredients,
+    .recipe__instructions,
+    .recipe__nutrition {
+        padding: 20px;
+    }
+
+    .recipe__preparation {
+        margin: 20px;
+    }
+}
